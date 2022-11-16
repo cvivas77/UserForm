@@ -34,7 +34,7 @@ const UsersForm = ({getUsers, userSelect, deselectUser}) => {
       axios.post('https://users-crud1.herokuapp.com/users/', data)
       .then(() =>{
           getUsers()
-          deselectUser() })
+          reset(initialValues) })
       .catch(error => console.log(error.response?.data));
     }
     
