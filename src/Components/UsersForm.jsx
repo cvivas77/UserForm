@@ -32,7 +32,9 @@ const UsersForm = ({getUsers, userSelect, deselectUser}) => {
         .catch(error => console.log(error.response?.data));
     } else {
       axios.post('https://users-crud1.herokuapp.com/users/', data)
-      .then(() => getUsers())
+      .then(() =>{
+          getUsers()
+          deselectUser() })
       .catch(error => console.log(error.response?.data));
     }
     
